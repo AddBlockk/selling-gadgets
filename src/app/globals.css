@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: #80808029;
+}
+
+.wrapper {
+  border-radius: 20px;
+  background: white;
+  min-height: 100vh;
+  max-width: 1440px;
+  margin: 0 auto;
+  /* margin-top: 100px; */
+  position: relative;
+}
+
+input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+}
+
+#menu__toggle:checked + .menu__btn > span {
+  transform: rotate(45deg);
+}
+#menu__toggle:checked + .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0deg);
+}
+#menu__toggle:checked + .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+#menu__toggle:checked ~ .menu__box {
+  left: 0 !important;
+}
+
+.menu__btn {
+  position: fixed;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 1;
+}
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  top: 10px;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #616161;
+  transition-duration: 0.25s;
+}
+.menu__btn > span::before {
+  content: "";
+  top: -8px;
+}
+.menu__btn > span::after {
+  content: "";
+  top: 8px;
+}
+
+.background-modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgb(0, 0, 0);
+  right: 0;
+  top: 0;
+}
+
+.wrapper-header {
+  transition: all 0ms ease-in-out;
+}
+
+.modal {
+  font-size: 45px;
+  color: #bb9a60;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 25vh auto;
+}
+
+.btn-orange,
+.btn-green {
+  transition: 1s;
+}
+
+.btn-orange:hover {
+  background: none;
+  border: 1px solid #eda415;
+  color: #eda415;
+  transition: 500ms;
+}
+
+.btn-green:hover {
+  background: #316887;
+  color: white;
+  transition: 500ms;
+}
+
+.right-products {
+  grid-template-columns: repeat(auto-fill, 300px);
+}
+
+progress::-moz-progress-bar {
+  background: rgb(236, 114, 15);
+  transition: 1000ms;
+}
+progress::-webkit-progress-value {
+  background: rgb(236, 114, 15);
+  transition: 1000ms;
+}
+progress {
+  color: rgb(236, 114, 15);
+  transition: 1000ms;
+}
